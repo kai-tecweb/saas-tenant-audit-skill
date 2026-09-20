@@ -1,13 +1,9 @@
 # Publishing checklist / 公開チェックリスト
 
-> Maintainer checklist (draft prepared 2026-09-20; delete this line once published).
-> 公開担当者向けチェックリスト（2026-09-20 作成の草案。公開後にこの行を削除してください）。
-
 ## English
 
 1. **Decide the identity.** Repository name (suggested: `saas-tenant-audit-skill`),
-   owner account, and the copyright line in `LICENSE` (currently the X handle
-   `iwasaki_dev40`; change it to your legal/brand name if you prefer).
+   owner account, and the copyright line in `LICENSE` (currently `kai-tecweb`).
 2. **Private-terms scan.** Create a file *outside* the repo (e.g. `~/private-terms.txt`),
    one term per line: every client, company, product, person, domain, host name, internal
    code name and project prefix you worked with. Then run:
@@ -42,7 +38,7 @@
 ## 日本語
 
 1. **公開名義を決める。** リポジトリ名（例: `saas-tenant-audit-skill`）、所有アカウント、`LICENSE` の著作権表記
-   （現在はXのハンドル `iwasaki_dev40`。法人名・屋号にしたい場合は変更）。
+   （現在は `kai-tecweb`）。
 2. **非公開語スキャン。** リポジトリ**外**にファイル（例: `~/private-terms.txt`）を作り、1行1語で、関わった顧客名・会社名・製品名・人名・
    ドメイン・ホスト名・社内コード名・テストデータの接頭辞をすべて書く。次を実行し `RESULT: clean` を確認:
    ```bash
