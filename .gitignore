@@ -1,0 +1,13 @@
+# private material must never be committed
+private-terms*.txt
+*.private.txt
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+
+.leak-allow-emails

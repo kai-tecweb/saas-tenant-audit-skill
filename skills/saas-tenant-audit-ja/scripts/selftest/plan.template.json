@@ -1,0 +1,18 @@
+{
+  "base_url": "http://127.0.0.1:PORT",
+  "actors": {
+    "A": {"token": "ENV:PROBE_TOKEN_A"},
+    "B": {"token": "ENV:PROBE_TOKEN_B", "scheme": "Token"},
+    "anon": {}
+  },
+  "vars": {"A1": "101", "B1": "202", "X": "999999"},
+  "snapshot_cmd": "python3 selftest/dump_victim.py PORT",
+  "rows": [
+    {"id": "own", "actor": "A", "method": "GET", "path": "/things/{A1}", "expected": 200, "control": true},
+    {"id": "foreign", "actor": "A", "method": "GET", "path": "/things/{B1}", "expected": 404},
+    {"id": "never", "actor": "A", "method": "GET", "path": "/things/{X}", "expected": 404, "same_as": "foreign"},
+    {"id": "anon", "actor": "anon", "method": "GET", "path": "/things/{B1}", "expected": [401, 403]},
+    {"id": "redirect", "actor": "A", "method": "GET", "path": "/old", "expected": 301},
+    {"id": "write", "actor": "A", "method": "PATCH", "path": "/things/{B1}", "body": {"name": "changed"}, "expected": 404}
+  ]
+}
